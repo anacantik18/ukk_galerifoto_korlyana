@@ -13,4 +13,8 @@ echo "<script>
 location.href='../admin/index.php';
 </script>";
 
+
+echo "<script>
+location.href='../admin/home.php';
+</script>";
 ?>
