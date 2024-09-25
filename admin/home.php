@@ -38,12 +38,10 @@ if ($_SESSION['status'] != 'login') {
           <a href="album.php" class="nav-link">Album</a>
           <a href="foto.php" class="nav-link">Foto</a>
         </div>
-        
         <a href="../config/aksi_logout.php" class="btn btn-outline-danger m-1">Keluar</a>
       </div>
     </div>
   </nav>
-
   <div class="container mt-3">
     Album:
     <?php 
@@ -51,7 +49,6 @@ if ($_SESSION['status'] != 'login') {
     while ($row = mysqli_fetch_array($album)) { ?>
       <a href="home.php?albumid=<?php echo $row['albumid'] ?>" class="btn btn-secondary"><?php echo $row['namaalbum'] ?></a>
     <?php } ?>
-
     <div class="row">
       <?php 
       if (isset($_GET['albumid'])) {
@@ -73,13 +70,16 @@ if ($_SESSION['status'] != 'login') {
                 $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                 echo mysqli_num_rows($like) . ' suka';
                 ?>
-                <a href=""><i class="fa-regular fa-comment"></i></a> 3 Komentar
+                 <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#Komentar<?php echo $data['fotoid'] ?>"><i class="fa-regular fa-comment"></i></a> 
+                <?php 
+                $jmlkomen = mysqli_query($koneksi, "SELECT * FROM komentarfoto WHERE fotoid='$fotoid'");
+                echo mysqli_num_rows($jmlkomen).'komentar';
+              
+                ?>
               </div>
             </div>
           </div>
-
         <?php } }else{
-
           $query = mysqli_query($koneksi, "SELECT * FROM foto WHERE userid='$userid'");
           while ($data = mysqli_fetch_array($query)) {
             ?>
@@ -98,7 +98,12 @@ if ($_SESSION['status'] != 'login') {
                   $like = mysqli_query($koneksi, "SELECT * FROM likefoto WHERE fotoid='$fotoid'");
                   echo mysqli_num_rows($like) . ' suka';
                   ?>
-                  <a href=""><i class="fa-regular fa-comment"></i></a> 3 Komentar
+                 
+                  <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#Komentar<?php echo $data['fotoid'] ?>"><i class="fa-regular fa-comment"></i></a> 
+                <?php 
+                $jmlkomen = mysqli_query($koneksi, "SELECT * FROM komentarfoto WHERE fotoid='$fotoid'");
+                echo mysqli_num_rows($jmlkomen).'komentar';
+                ?>
                 </div>
               </div>
             </div>
@@ -109,7 +114,6 @@ if ($_SESSION['status'] != 'login') {
       <footer class="d-flex justify-content-center border-top mt-3 bg-light fixed-bottom">
         <p>&copy; UKK RPL 2024 | KORLYANA</p>
       </footer>
-
       <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
     </body>
     </html>
