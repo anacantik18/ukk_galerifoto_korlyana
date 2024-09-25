@@ -7,8 +7,11 @@
   alert('Anda belum Login';
   location.href='../index.php';
   </script>";
+  
 }
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +23,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
  <style>
         .bg-image {
-            background-image: url('../assets/img/cantik.jpg');
+            background-image: url('../assets/img/heloin.png');
             height: 100vh;
         }
     </style>
