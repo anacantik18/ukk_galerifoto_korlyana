@@ -108,19 +108,20 @@
                           $komentar = mysqli_query($koneksi, "SELECT * FROM komentarfoto INNER JOIN user ON komentarfoto.userid=user.userid WHERE komentarfoto.fotoid='$fotoid'");
                           while ($row = mysqli_fetch_array($komentar)){ 
                            ?>
+                        <p align="left">
+                          <?php echo $data['deskripsifoto'] ?>
+                        </p>
+                        <hr>
                            <p align="left">
                              <strong><?php echo $row ['namalengkap'] ?></strong>
                              <?php echo $row ['isikomentar'] ?>
                            </p>
                          <?php  } ?>
                          <hr>
-                         <p align="left">
-                          <?php echo $data['deskripsifoto'] ?>
-                        </p>
-                        <hr>
                         <div class="stikcky-bottom">
                           <form action="../config/proses_komentar.php" method="POST" >
                             <div class="input-grup">
+
                               <input type="hidden" name="fotoid" value="<?php echo $data['fotoid'] ?>">
                               <input type="text" name="isikomentar" class="form-control" placeholder="Tambah Komentar">
                               <div class="input-grup-prepend">
