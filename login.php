@@ -8,7 +8,7 @@
 
     <style>
         .bg-image {
-            background-image: url('assets/img/poto.jpg');
+            background-image: url('assets/img/login.png');
             height: 100vh;
         }
     </style>
