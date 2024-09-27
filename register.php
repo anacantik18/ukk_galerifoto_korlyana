@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <style>
         .bg-image {
-            background-image: url('assets/img/wahh.webp');
+            background-image: url('assets/img/register.jpg');
             height: 100vh;
         }
     </style>
