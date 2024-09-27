@@ -17,7 +17,7 @@ $userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
     <title>Website Galeri Foto</title>
     <style>
         .bg-image {
-            background-image: url('assets/img/estetik.jpg');
+            background-image: url('assets/img/cantik.webp');
             height: 100vh;
         }
     </style>
